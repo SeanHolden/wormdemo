@@ -4,7 +4,7 @@ require 'redis'
 
 configure do
   def load_redis
-    url = ENV['REDIS_URL']
+    url = ENV['REDISTOGO_URL']
     uri = URI.parse(url)
     @redis ||= Redis.new(:host => uri.host, :port => uri.port, :password => uri.password)
   end
